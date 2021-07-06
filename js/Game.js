@@ -34,5 +34,25 @@ if(countRef.exists()){
         text ("game start", 200, 200)
 
         player.getInfoPlayer()
+
+        if(keyIsDown(UP_ARROW)){
+            player.distance+=50
+            player.update()
+        }
+         
+         
+         var newY=200
+        for(var plr in allPlayers){
+
+            if(plr === "player" + player.index){
+                fill ("red")
+            }
+            else{
+                fill ("blue")
+            }
+
+            text(allPlayers[plr].name + ";" + allPlayers[plr].distance,120,newY)
+            newY+=50
+        }
     }
 }
